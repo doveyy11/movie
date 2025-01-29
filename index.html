@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《某种物质》评论可视化</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 背景 -->
+    <div class="background"></div>
+
+    <!-- 导航栏 -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="index.html">电影简介</a></li>
+            <li><a href="process.html">爬取过程</a></li>
+            <li><a href="visualization.html">可视化展示</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主内容 -->
+    <main class="content">
+        <button id="intro-btn">点击查看电影简介</button>
+        <h1 class="title" id="movie-intro">
+            《某种物质》是一部科幻题材的心理惊悚片，讲述了在未来世界，一种神秘的物质被发现，并迅速改变了人类的生活方式。这种物质不仅能极大地提升人类的智力，还能改变情绪、思维和感知世界的方式。然而，这种变革带来了意想不到的后果，社会陷入了前所未有的混乱和道德困境。
+        </h1>
+    </main>
+
+    <audio id="bgm" src="bgm.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
