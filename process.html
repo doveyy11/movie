@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爬取过程 - 《某种物质》评论</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="index.html">电影简介</a></li>
+            <li><a href="process.html">爬取过程</a></li>
+            <li><a href="visualization.html">可视化展示</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主内容 -->
+    <main class="content">
+        <h1 class="title">《某种物质》评论爬取过程</h1>
+
+        <!-- 爬取过程报告 -->
+        <section class="report">
+            <h2>爬取过程概述</h2>
+            <p><strong>1. 数据源选择：</strong><br>
+                本次数据爬取的目标是豆瓣电影《某种物质》中的用户评论。豆瓣是一个广受欢迎的影评平台，提供丰富的评论数据，适合用于情感分析和评论可视化展示。</p>
+
+            <p><strong>2. 爬虫架构：</strong><br>
+                爬虫使用 <strong>Python</strong> 语言，结合 <strong>requests</strong> 和 <strong>BeautifulSoup</strong> 库来抓取和解析豆瓣页面。通过 <strong>requests</strong> 发送 HTTP 请求获取页面 HTML，利用 <strong>BeautifulSoup</strong> 解析 HTML 内容，提取评论数据。</p>
+
+            <p><strong>3. 爬取流程：</strong><br>
+                <ul>
+                    <li><strong>页面请求：</strong>通过 <strong>requests.get()</strong> 发送请求，获取《某种物质》电影评论页面的 HTML 内容。通过 <strong>params</strong> 参数指定请求的页码及评论数量。</li>
+                    <li><strong>数据提取：</strong>使用 <strong>BeautifulSoup</strong> 从 HTML 中提取评论数据，包括用户昵称、评论内容、评分、评论日期、点赞数。</li>
+                    <li><strong>分页抓取：</strong>根据设定的总评论数和每页评论数，爬取相应的多页数据，确保评论数据的完整性。</li>
+                    <li><strong>延时请求：</strong>使用 <strong>time.sleep()</strong> 和 <strong>random.uniform()</strong> 随机延时 2 到 5 秒，模拟人工行为，避免触发反爬机制。</li>
+                </ul>
+            </p>
+
+            <p><strong>4. 数据清洗：</strong><br>
+                <ul>
+                    <li><strong>评分转换：</strong>使用预定义的评分字典，将豆瓣中的文字评分（如“很差”、“较差”等）转换为数字评分（1 到 5），方便后续分析。</li>
+                    <li><strong>删除空值：</strong>清除评分和评论内容为空的行，确保数据质量。</li>
+                    <li><strong>格式转换：</strong>将评分列转换为整数类型，确保数据一致性。</li>
+                </ul>
+            </p>
+
+            <p><strong>5. 数据保存：</strong><br>
+                将清洗后的数据保存为 <strong>CSV</strong> 格式（cleaned_douban_comments_fixed.csv），方便后续分析和可视化展示。</p>
+
+            <p><strong>6. 结果：</strong><br>
+                成功抓取并清洗了《某种物质》电影的评论数据，为后续的数据分析和可视化展示提供了干净、结构化的数据集。</p>
+        </section>
+
+        <!-- 插入爬取过程的图片 -->
+        <section class="images">
+            <h2>爬取过程截图</h2>
+            <div class="image-container">
+                <img src="process_image1.png" alt="爬取过程1" width="600">
+                <img src="process_image2.png" alt="爬取过程2" width="600">
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
