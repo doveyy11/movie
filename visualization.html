@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《某种物质》评论可视化</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 背景 -->
+    <div class="background"></div>
+
+    <!-- 导航栏 -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="index.html">电影简介</a></li>
+            <li><a href="process.html">爬取过程</a></li>
+            <li><a href="visualization.html">可视化展示</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主内容 -->
+    <main class="content">
+        <h1 class="title">《某种物质》评论可视化</h1>
+        
+        <section>
+            <h2>可视化过程报告</h2>
+            <p>
+                本项目通过三个主要的可视化代码对爬取并清洗后的豆瓣评论数据进行分析，目的是展示评论的评分分布、评论内容的词云以及评论数量的时间分布。以下是可视化过程的简要概述：
+            </p>
+
+            <h3>1. 评分频次分布（柱状图）</h3>
+            <p>
+                首先，我们统计了每个评分（1到5分）的评论数量，并以柱状图的形式展示其频次分布。该柱状图清晰地展示了不同评分的评论数量，帮助我们理解哪些评分的评论更为集中。例如，可能会发现大多数评论集中在“还行”或“推荐”这类评分上。
+            </p>
+
+            <h3>2. 评论内容词云</h3>
+            <p>
+                其次，我们对评论内容进行分析，生成词云图。词云通过展示评论中最频繁出现的词汇，帮助我们了解评论的主题与关键词。此分析可以揭示电影中的关键元素（如情节、角色、导演等）以及观众的普遍情感和态度。
+            </p>
+
+            <h3>3. 评论数量的时间分布（饼状图）</h3>
+            <p>
+                最后，我们对评论数据按月份进行了分类，绘制了饼状图，展示了评论数量在不同月份的分布情况。通过这个可视化，我们可以看到评论的活跃时期，帮助我们了解观众对电影的关注趋势，是否在某些时段有显著的评论量增加。
+            </p>
+        </section>
+
+        <!-- 插入图片 -->
+        <section>
+            <h2>可视化成果</h2>
+            <div class="image-gallery">
+                <img src="rating_distribution_bar_chart.png" alt="评分频次分布柱状图">
+                <img src="comment_wordcloud.png" alt="评论内容词云">
+                <img src="comment_monthly_distribution_pie_chart.png" alt="评论数量时间分布饼状图">
+            </div>
+        </section>
+
+        <!-- 分析报告 -->
+        <section>
+            <h2>分析报告</h2>
+            
+            <h3>1. 评分分布</h3>
+            <p>
+                - **两极分化明显**：1分（最低）和5分（最高）频次显著高于中间分数（2-4分）。<br>
+                - **结论**：作品争议性强，观众态度极端化——部分强烈批判（低分），部分认可其讽刺价值（高分）。
+            </p>
+            <hr>
+
+            <h3>2. 评论主题</h3>
+            <p>
+                - **核心争议点**：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; - 性别剥削：高频词如“虐待女性身体”“男观众逃脱惩罚”“欲望驱动”，指向对女性暴力的批判。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; - 视觉冲击争议：词如“恶心”“视觉冲击”反映观众对极端画面不适，部分认为其“形式大于内涵”。<br>
+                - **对比案例**：提及《致命弯道》《爱多玛120天》，暗示作品风格接近“剥削电影”，强化争议性。
+            </p>
+            <hr>
+
+            <h3>3. 评论时间分布</h3>
+            <p>
+                - **集中爆发**：40.9%的评论集中在**11月**，可能关联作品上映或社会事件（如性别议题热议）。<br>
+                - **长尾缺失**：其他月份占比均低于10%，表明话题热度短暂，缺乏持续讨论。
+            </p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
